@@ -1,0 +1,93 @@
+---
+// src/pages/habilidades.astro
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="Habilidades - Tu Nombre" description="Mis habilidades y tecnologías que domino">
+  <section class="py-16">
+    <div class="max-w-6xl mx-auto px-4">
+      <h1 class="text-4xl font-bold text-center mb-12">Mis Habilidades</h1>
+      
+      <!-- Frontend -->
+      <div class="mb-12">
+        <h2 class="text-2xl font-bold mb-6 text-blue-600">Frontend</h2>
+        <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div class="bg-white p-6 rounded-lg shadow-lg text-center">
+            <div class="text-4xl mb-4">⚛️</div>
+            <h3 class="text-xl font-bold mb-2">React</h3>
+            <p class="text-gray-600">Experiencia en desarrollo de componentes reutilizables</p>
+          </div>
+          <div class="bg-white p-6 rounded-lg shadow-lg text-center">
+            <div class="text-4xl mb-4">🚀</div>
+            <h3 class="text-xl font-bold mb-2">Astro</h3>
+            <p class="text-gray-600">Sitios estáticos de alto rendimiento</p>
+          </div>
+          <div class="bg-white p-6 rounded-lg shadow-lg text-center">
+            <div class="text-4xl mb-4">🎨</div>
+            <h3 class="text-xl font-bold mb-2">Tailwind CSS</h3>
+            <p class="text-gray-600">Diseño responsivo y moderno</p>
+          </div>
+          <div class="bg-white p-6 rounded-lg shadow-lg text-center">
+            <div class="text-4xl mb-4">📱</div>
+            <h3 class="text-xl font-bold mb-2">JavaScript</h3>
+            <p class="text-gray-600">ES6+, TypeScript, APIs modernas</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Backend -->
+      <div class="mb-12">
+        <h2 class="text-2xl font-bold mb-6 text-green-600">Backend</h2>
+        <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div class="bg-white p-6 rounded-lg shadow-lg text-center">
+            <div class="text-4xl mb-4">🟢</div>
+            <h3 class="text-xl font-bold mb-2">Node.js</h3>
+            <p class="text-gray-600">APIs RESTful y aplicaciones server-side</p>
+          </div>
+          <div class="bg-white p-6 rounded-lg shadow-lg text-center">
+            <div class="text-4xl mb-4">🗄️</div>
+            <h3 class="text-xl font-bold mb-2">Bases de Datos</h3>
+            <p class="text-gray-600">MongoDB, PostgreSQL, MySQL</p>
+          </div>
+          <div class="bg-white p-6 rounded-lg shadow-lg text-center">
+            <div class="text-4xl mb-4">⚡</div>
+            <h3 class="text-xl font-bold mb-2">Express</h3>
+            <p class="text-gray-600">Framework web para Node.js</p>
+          </div>
+          <div class="bg-white p-6 rounded-lg shadow-lg text-center">
+            <div class="text-4xl mb-4">🔐</div>
+            <h3 class="text-xl font-bold mb-2">Autenticación</h3>
+            <p class="text-gray-600">JWT, OAuth, seguridad web</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Herramientas -->
+      <div>
+        <h2 class="text-2xl font-bold mb-6 text-purple-600">Herramientas</h2>
+        <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div class="bg-white p-6 rounded-lg shadow-lg text-center">
+            <div class="text-4xl mb-4">📦</div>
+            <h3 class="text-xl font-bold mb-2">Git & GitHub</h3>
+            <p class="text-gray-600">Control de versiones y colaboración</p>
+          </div>
+          <div class="bg-white p-6 rounded-lg shadow-lg text-center">
+            <div class="text-4xl mb-4">🔧</div>
+            <h3 class="text-xl font-bold mb-2">VS Code</h3>
+            <p class="text-gray-600">Editor de código preferido</p>
+          </div>
+          <div class="bg-white p-6 rounded-lg shadow-lg text-center">
+            <div class="text-4xl mb-4">🐳</div>
+            <h3 class="text-xl font-bold mb-2">Docker</h3>
+            <p class="text-gray-600">Contenedores y despliegue</p>
+          </div>
+          <div class="bg-white p-6 rounded-lg shadow-lg text-center">
+            <div class="text-4xl mb-4">☁️</div>
+            <h3 class="text-xl font-bold mb-2">Cloud</h3>
+            <p class="text-gray-600">AWS, Vercel, Netlify</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</Layout>

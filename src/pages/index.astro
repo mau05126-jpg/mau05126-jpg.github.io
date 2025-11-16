@@ -1,10 +1,92 @@
 ---
+// src/pages/index.astro
 import Layout from '../layouts/Layout.astro';
-import SiteMaintenance from '../components/templates/SiteMaintenance.astro';
+
+// Importa las imágenes desde src/images/
+import profileImage from '../images/profile.jpg';
+import project1Image from '../images/project1.jpg';
+import project2Image from '../images/project2.jpg';
+import project3Image from '../images/project3.jpg';
 ---
 
-<Layout>
-	<h1>Hola mundo</h1>
-	<SiteMaintenance />
+<Layout title="Inicio - Mauricio" description="Portafolio personal de Mauricio">
+  <!-- Hero Section -->
+	<section class="bg-blue-600 text-white py-12 md:py-20">    <div class="max-w-7xl mx-auto px-4 sm:px-6 text-center">
+      <h1 class="text-3xl sm:text-4xl md:text-5xl font-bold mb-4">Mauricio</h1>
+      <p class="text-lg sm:text-xl mb-6 md:mb-8 max-w-2xl mx-auto">
+        Desarrollador Web Full Stack apasionado por crear soluciones innovadoras
+      </p>
+      <a href="/contacto" class="bg-white text-blue-600 px-6 py-2 md:px-8 md:py-3 rounded-lg font-semibold hover:bg-gray-100 transition duration-300 text-sm md:text-base">
+        Contáctame
+      </a>
+    </div>
+  </section>
 
+  <!-- Sobre Mí -->
+  <section class="py-12 md:py-16">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6">
+      <h2 class="text-2xl md:text-3xl font-bold text-center mb-8 md:mb-12">Sobre Mí</h2>
+      <div class="flex flex-col md:grid md:grid-cols-2 gap-8 md:gap-12 items-center">
+        <div class="order-2 md:order-1">
+          <img src={profileImage.src} alt="Foto de Mauricio" class="rounded-lg shadow-lg w-full max-w-md mx-auto" />
+        </div>
+        <div class="order-1 md:order-2 text-center md:text-left">
+          <p class="text-base md:text-lg mb-4">
+            Soy un desarrollador web con X años de experiencia en la creación de aplicaciones web modernas y responsivas. 
+            Me especializo en tecnologías como JavaScript, React, Node.js y por supuesto, Astro.
+          </p>
+          <p class="text-base md:text-lg mb-6">
+            Me encanta resolver problemas complejos y crear experiencias de usuario excepcionales. 
+            Siempre estoy aprendiendo nuevas tecnologías y mejorando mis habilidades.
+          </p>
+          <a href="/habilidades" class="bg-blue-600 text-white px-4 py-2 md:px-6 md:py-2 rounded-lg hover:bg-blue-700 transition duration-300 text-sm md:text-base inline-block">
+            Ver Mis Habilidades
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Proyectos Destacados -->
+  <section class="py-12 md:py-16 bg-gray-100">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6">
+      <h2 class="text-2xl md:text-3xl font-bold text-center mb-8 md:mb-12">Proyectos Destacados</h2>
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+        <!-- Proyecto 1 -->
+        <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+          <img src={project1Image.src} alt="E-commerce Moderno" class="w-full h-40 sm:h-48 object-cover" />
+          <div class="p-4 sm:p-6">
+            <h3 class="text-lg sm:text-xl font-bold mb-2">E-commerce Moderno</h3>
+            <p class="text-gray-600 text-sm sm:text-base mb-4">Plataforma de e-commerce con React, Node.js y MongoDB</p>
+            <a href="/proyectos" class="text-blue-600 hover:text-blue-800 font-semibold text-sm sm:text-base">Ver más →</a>
+          </div>
+        </div>
+        
+        <!-- Proyecto 2 -->
+        <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+          <img src={project2Image.src} alt="App de Tareas" class="w-full h-40 sm:h-48 object-cover" />
+          <div class="p-4 sm:p-6">
+            <h3 class="text-lg sm:text-xl font-bold mb-2">App de Tareas</h3>
+            <p class="text-gray-600 text-sm sm:text-base mb-4">Aplicación de gestión de tareas con Vue.js y Firebase</p>
+            <a href="/proyectos" class="text-blue-600 hover:text-blue-800 font-semibold text-sm sm:text-base">Ver más →</a>
+          </div>
+        </div>
+        
+        <!-- Proyecto 3 -->
+        <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+          <img src={project3Image.src} alt="Dashboard Analytics" class="w-full h-40 sm:h-48 object-cover" />
+          <div class="p-4 sm:p-6">
+            <h3 class="text-lg sm:text-xl font-bold mb-2">Dashboard Analytics</h3>
+            <p class="text-gray-600 text-sm sm:text-base mb-4">Panel de control con gráficos interactivos y D3.js</p>
+            <a href="/proyectos" class="text-blue-600 hover:text-blue-800 font-semibold text-sm sm:text-base">Ver más →</a>
+          </div>
+        </div>
+      </div>
+      <div class="text-center mt-6 md:mt-8">
+        <a href="/proyectos" class="bg-blue-600 text-white px-6 py-2 md:px-8 md:py-3 rounded-lg hover:bg-blue-700 transition duration-300 text-sm md:text-base inline-block">
+          Ver Todos los Proyectos
+        </a>
+      </div>
+    </div>
+  </section>
 </Layout>
