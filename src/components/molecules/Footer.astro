@@ -5,8 +5,7 @@
 <nav class="bg-white shadow-lg fixed w-full top-0 z-50">
   <div class="max-w-7xl mx-auto px-4">
     <div class="flex justify-between items-center py-4">
-      <!-- Logo/Nombre -->
-      <div class="shrink-0">  <!-- ✅ CAMBIADO -->
+      <div class="shrink-0"> 
         <a href="/" class="text-xl font-bold text-gray-800">Mauricio</a>
       </div>
       
@@ -28,7 +27,6 @@
         </ul>
       </div>
       
-      <!-- Menú móvil (hamburguesa) -->
       <div class="md:hidden">
         <button id="menu-toggle" class="text-gray-600 hover:text-blue-500 focus:outline-none">
           <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -38,7 +36,6 @@
       </div>
     </div>
     
-    <!-- Menú móvil desplegable -->
     <div id="mobile-menu" class="hidden md:hidden pb-4">
       <ul class="space-y-2">
         <li>
@@ -59,7 +56,6 @@
 </nav>
 
 <script>
-  // Script para el menú móvil - CORREGIDO para Astro
   document.addEventListener('DOMContentLoaded', function() {
     const menuToggle = document.getElementById('menu-toggle');
     const mobileMenu = document.getElementById('mobile-menu');
