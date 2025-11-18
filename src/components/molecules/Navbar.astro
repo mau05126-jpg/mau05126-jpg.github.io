@@ -1,0 +1,40 @@
+---
+// src/components/molecules/Navbar.astro
+---
+
+<nav class="bg-white shadow-lg fixed w-full top-0 z-50">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6">
+    <div class="flex justify-between items-center py-3 md:py-4">
+      <div class="shrink-0">  
+        <a href="/" class="text-lg md:text-xl font-bold text-gray-800">Mauricio</a>
+      </div>
+      
+      <!-- Menú de navegación desktop -->
+      <div class="hidden md:block">
+        <ul class="flex space-x-6 lg:space-x-8">
+          <li>
+            <a href="/" class="text-gray-600 hover:text-blue-500 transition duration-300 text-sm lg:text-base">Inicio</a>
+          </li>
+          <li>
+            <a href="/habilidades" class="text-gray-600 hover:text-blue-500 transition duration-300 text-sm lg:text-base">Habilidades</a>
+          </li>
+          <li>
+            <a href="/proyectos" class="text-gray-600 hover:text-blue-500 transition duration-300 text-sm lg:text-base">Proyectos</a>
+          </li>
+          <li>
+            <a href="/contactos" class="text-gray-600 hover:text-blue-500 transition duration-300 text-sm lg:text-base">Contacto</a>
+          </li>
+        </ul>
+      </div>
+      
+      <div class="md:hidden">
+        <div class="flex space-x-4">
+          <a href="/" class="text-gray-600 hover:text-blue-500 transition duration-300 text-xs">Inicio</a>
+          <a href="/habilidades" class="text-gray-600 hover:text-blue-500 transition duration-300 text-xs">Habilidades</a>
+          <a href="/proyectos" class="text-gray-600 hover:text-blue-500 transition duration-300 text-xs">Proyectos</a>
+          <a href="/contactos" class="text-gray-600 hover:text-blue-500 transition duration-300 text-xs">Contacto</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</nav>

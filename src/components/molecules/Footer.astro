@@ -1,0 +1,69 @@
+---
+// src/components/molecules/Navbar.astro
+---
+
+<nav class="bg-white shadow-lg fixed w-full top-0 z-50">
+  <div class="max-w-7xl mx-auto px-4">
+    <div class="flex justify-between items-center py-4">
+      <div class="shrink-0"> 
+        <a href="/" class="text-xl font-bold text-gray-800">Mauricio</a>
+      </div>
+      
+      <!-- Menú de navegación desktop -->
+      <div class="hidden md:block">
+        <ul class="flex space-x-8">
+          <li>
+            <a href="/" class="text-gray-600 hover:text-blue-500 transition duration-300">Inicio</a>
+          </li>
+          <li>
+            <a href="/habilidades" class="text-gray-600 hover:text-blue-500 transition duration-300">Habilidades</a>
+          </li>
+          <li>
+            <a href="/proyectos" class="text-gray-600 hover:text-blue-500 transition duration-300">Proyectos</a>
+          </li>
+          <li>
+            <a href="/contactos" class="text-gray-600 hover:text-blue-500 transition duration-300">Contacto</a>
+          </li>
+        </ul>
+      </div>
+      
+      <div class="md:hidden">
+        <button id="menu-toggle" class="text-gray-600 hover:text-blue-500 focus:outline-none">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+          </svg>
+        </button>
+      </div>
+    </div>
+    
+    <div id="mobile-menu" class="hidden md:hidden pb-4">
+      <ul class="space-y-2">
+        <li>
+          <a href="/" class="block text-gray-600 hover:text-blue-500 transition duration-300">Inicio</a>
+        </li>
+        <li>
+          <a href="/habilidades" class="block text-gray-600 hover:text-blue-500 transition duration-300">Habilidades</a>
+        </li>
+        <li>
+          <a href="/proyectos" class="block text-gray-600 hover:text-blue-500 transition duration-300">Proyectos</a>
+        </li>
+        <li>
+          <a href="/contactos" class="block text-gray-600 hover:text-blue-500 transition duration-300">Contacto</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const menuToggle = document.getElementById('menu-toggle');
+    const mobileMenu = document.getElementById('mobile-menu');
+    
+    if (menuToggle && mobileMenu) {
+      menuToggle.addEventListener('click', function() {
+        mobileMenu.classList.toggle('hidden');
+      });
+    }
+  });
+</script>
