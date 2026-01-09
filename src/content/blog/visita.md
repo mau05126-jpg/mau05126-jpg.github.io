@@ -7,7 +7,7 @@ image: "/images/blog/villa.png"
 tags: ["familia", "visitas", "educación"]
 ---
 
-Mi hermana menor estudia el segundo año de secundaria en la escuela Villa de los Niños en Chalco, Ciudad de México. En los proximos tres meses que faltan para el mes de mayo del 2026, nuestra familia y yo la vamos ahir a visitar, continuando con la tradición que comenzamos el año pasado.
+Mi hermana menor estudia el segundo año de secundaria en la escuela Villa de los Niños en Chalco, Ciudad de México. En los próximos tres meses que faltan para mayo de 2026, nuestra familia y yo la vamos a ir a visitar, continuando con la tradición que comenzamos el año pasado.
 
 Estas visitas son muy importantes para nosotros porque queremos que mi hermana sepa que siempre cuenta con nuestro apoyo y que no está sola. A ella le encanta que vayamos, y a nosotros nos gusta acompañarla y ver cómo crece en su educación.
 
