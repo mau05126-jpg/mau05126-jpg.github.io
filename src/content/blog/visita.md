@@ -1,7 +1,7 @@
 ---
 title: "Visita a mi hermana en Villa de los Niños Chalco"
-description: "Mi hermana menor estudia el segundo año de secundaria en la escuela Villa de los Niños en Chalco, Ciudad de México"
-pubDate: 2025-05-11
+description: "Mi hermana menor estudia el segundo año de secundaria en la escuela Villa de los Niños en Chalco, Ciudad de México."
+pubDate: 2025-05-10
 author: "Mauricio"
 image: "/images/blog/villa.png"
 tags: ["familia", "visitas", "educación"]
