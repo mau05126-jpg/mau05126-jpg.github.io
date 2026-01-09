@@ -1,6 +1,6 @@
 ---
 title: "Mi hogar lejos de casa: Viviendo en San José del Rincón"
-description: "A lo largo de estos tres años que llevo estudiando Ingeniería en Sistemas Computacionales en la UMB de San José del Rincón, he encontrado un segundo hogar donde rento"
+description: "A lo largo de estos tres años que llevo estudiando Ingeniería en Sistemas Computacionales en la UMB de San José del Rincón, he encontrado un segundo hogar donde rento."
 pubDate: 2025-11-29
 author: "Mauricio"
 image: "/images/blog/fami.png"
