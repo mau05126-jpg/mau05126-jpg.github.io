@@ -1,6 +1,6 @@
 ---
 title: "Mi experiencia en el Rally de Innovación 2025"
-description: "Participé en el Rally Latinoamericano de Innovación, una competencia internacional donde equipos de ingeniería trabajamos 28 horas seguidas resolviendo problemas reales"
+description: "Participé en el Rally Latinoamericano de Innovación, una competencia internacional donde equipos de ingeniería trabajamos 28 horas seguidas resolviendo problemas reales."
 pubDate: 2025-10-11
 author: "Mauricio"
 image: "/images/blog/rally.jpg"
