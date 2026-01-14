@@ -1,0 +1,185 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import { getCollection } from 'astro:content';
+
+// Configuración
+const POSTS_PER_PAGE = 3;
+
+// Obtener posts ordenados
+const allPosts = await getCollection('blog');
+const sortedPosts = allPosts.sort((a, b) => 
+  b.data.pubDate.getTime() - a.data.pubDate.getTime()
+);
+
+const totalPosts = sortedPosts.length;
+const totalPages = Math.ceil(totalPosts / POSTS_PER_PAGE);
+
+// Obtener página actual
+const { page: pageParam } = Astro.params;
+let currentPage = 1;
+
+if (pageParam && !isNaN(parseInt(pageParam))) {
+  const pageNum = parseInt(pageParam);
+  if (pageNum >= 1 && pageNum <= totalPages) {
+    currentPage = pageNum;
+  }
+}
+
+// Calcular índices
+const startIndex = (currentPage - 1) * POSTS_PER_PAGE;
+let endIndex = startIndex + POSTS_PER_PAGE;
+if (endIndex > totalPosts) {
+  endIndex = totalPosts;
+}
+
+const currentPosts = sortedPosts.slice(startIndex, endIndex);
+
+// Generar rutas para getStaticPaths
+export async function getStaticPaths() {
+  const POSTS_PER_PAGE_FOR_PATHS = 3;
+  
+  const allPostsForPaths = await getCollection('blog');
+  const sortedForPaths = allPostsForPaths.sort((a, b) => 
+    b.data.pubDate.getTime() - a.data.pubDate.getTime()
+  );
+  
+  const totalForPaths = sortedForPaths.length;
+  const totalPagesForPaths = Math.ceil(totalForPaths / POSTS_PER_PAGE_FOR_PATHS);
+  
+  const paths = [];
+  
+  // Página 1 (sin parámetro)
+  paths.push({ params: { page: undefined } });
+  
+  // Páginas 2 en adelante
+  for (let i = 2; i <= totalPagesForPaths; i++) {
+    paths.push({ params: { page: i.toString() } });
+  }
+  
+  return paths;
+}
+---
+
+<Layout title={`Blog${currentPage > 1 ? ` - Página ${currentPage}` : ''}`}>
+  <div class="bg-blue-600 py-8 px-4 shadow-lg pt-24">
+    <div class="max-w-6xl mx-auto text-center">
+      <h1 class="text-4xl md:text-5xl font-bold text-white mb-3">
+        Mi Blog
+      </h1>
+      <p class="text-blue-100 text-lg">Experiencias y aprendizajes de mi vida académica</p>
+      {currentPage > 1 && (
+        <p class="text-blue-200 mt-2">Página {currentPage} de {totalPages}</p>
+      )}
+    </div>
+  </div>
+  
+  <div class="max-w-6xl mx-auto px-4 py-8">
+    
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
+      {currentPosts.map((post) => (
+        <div class="bg-white rounded-lg border border-gray-200 hover:border-blue-300 hover:shadow-md transition-all duration-200 overflow-hidden flex flex-col h-full">
+          
+          <div class="h-40 overflow-hidden bg-gray-200 relative">
+            <div class="absolute inset-0 bg-gray-300 animate-pulse"></div>
+            {post.data.image && (
+              <img 
+                src={post.data.image}  
+                alt={post.data.title}
+                class="w-full h-full object-cover hover:scale-105 transition-transform duration-300 relative z-10"
+                loading="lazy"
+                decoding="async"
+              />
+            )}
+          </div>
+          
+          <div class="p-4 flex flex-col grow">
+            <div class="text-sm text-blue-600 mb-2 text-center">
+              {post.data.pubDate.toLocaleDateString('es-ES')}
+            </div>
+            
+            <h3 class="text-lg font-semibold text-gray-800 mb-3 line-clamp-2 text-center">
+              {post.data.title}
+            </h3>
+            
+            <div class="text-gray-600 text-sm mb-4 grow line-clamp-3">
+              {post.data.description}
+            </div>
+            
+            <a 
+              href={`/blog/${post.slug}`}
+              class="w-full py-2 px-4 bg-blue-500 hover:bg-blue-600 text-white text-sm font-medium rounded transition-colors flex items-center justify-center"
+            >
+              <span>Leer más</span>
+              <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/>
+              </svg>
+            </a>
+          </div>
+        </div>
+      ))}
+    </div>
+    
+    <!-- Navegación de paginación -->
+    {totalPages > 1 && (
+      <div class="flex flex-wrap justify-center items-center gap-4 mt-8">
+        <!-- Botón Anterior -->
+        {currentPage > 1 ? (
+          currentPage === 2 ? (
+            <a href="/blog/" class="px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600 transition-colors">
+              ← Anterior
+            </a>
+          ) : (
+            <a href={`/blog/${currentPage - 1}/`} class="px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600 transition-colors">
+              ← Anterior
+            </a>
+          )
+        ) : (
+          <span class="px-4 py-2 bg-gray-300 text-gray-500 rounded cursor-not-allowed">
+            ← Anterior
+          </span>
+        )}
+        
+        <!-- Números de página -->
+        <div class="flex flex-wrap gap-2 justify-center">
+          {Array.from({ length: totalPages }, (_, i) => i + 1).map((pageNum) => (
+            pageNum === currentPage ? (
+              <span class="px-3 py-2 bg-blue-600 text-white rounded font-semibold min-w-10 text-center">
+                {pageNum}
+              </span>
+            ) : pageNum === 1 ? (
+              <a href="/blog/" class="px-3 py-2 bg-gray-200 text-gray-700 rounded hover:bg-gray-300 transition-colors min-w-10 text-center">
+                {pageNum}
+              </a>
+            ) : (
+              <a href={`/blog/${pageNum}/`} class="px-3 py-2 bg-gray-200 text-gray-700 rounded hover:bg-gray-300 transition-colors min-w-10 text-center">
+                {pageNum}
+              </a>
+            )
+          ))}
+        </div>
+        
+        <!-- Botón Siguiente -->
+        {currentPage < totalPages ? (
+          <a
+            href={`/blog/${currentPage + 1}/`}
+            class="px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600 transition-colors"
+          >
+            Siguiente →
+          </a>
+        ) : (
+          <span class="px-4 py-2 bg-gray-300 text-gray-500 rounded cursor-not-allowed">
+            Siguiente →
+          </span>
+        )}
+      </div>
+    )}
+    
+    <!-- Información de paginación -->
+    {totalPages > 1 && (
+      <div class="text-center text-gray-600 mt-4 text-sm">
+        Mostrando {startIndex + 1} - {endIndex} de {totalPosts} entradas
+      </div>
+    )}
+    
+  </div>
+</Layout>

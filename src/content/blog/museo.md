@@ -1,7 +1,7 @@
 ---
 title: "Visita académica al Museo del Banco de México y Chapultepec"
 description: "El 11 de noviembre realizamos una salida académica a la Ciudad de México, visitando el Museo del Banco de México y el Bosque de Chapultepec."
-pubDate: 2025-11-11
+pubDate: 2025-11-12
 author: "Mauricio"
 image: "/images/blog/banco.png"
 tags: ["académico", "museo", "CDMX"]

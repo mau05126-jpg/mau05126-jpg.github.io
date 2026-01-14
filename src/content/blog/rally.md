@@ -13,4 +13,3 @@ El evento fue en la sede TESJO NORTE en Estado de México, de manera presencial.
 
 Lo que más aprendí fue a trabajar bajo presión, colaborar en equipo y pensar de manera innovadora. Fue una experiencia agotadora pero increíble que me ayudó a crecer como futuro ingeniero.
 
-Si tienes la oportunidad de participar en algo así, te lo recomiendo totalmente. Aprendes más en 28 horas que en semanas de clases normales.
