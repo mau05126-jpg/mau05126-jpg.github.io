@@ -1,7 +1,7 @@
 ---
 title: "Ganamos el primer lugar en el Torneo de Robots de Combate UMB"
 description: "Participación de equipo en el torneo de robots de combate organizado por la UMB (Universidad Mexiquense del Bicentenario) en San José del Rincón."
-pubDate: 2025-12-05
+pubDate: 2025-12-06
 author: "Mauricio"
 image: "/images/blog/robot.jpg"
 tags: ["robótica", "competencia", "UMB"]
